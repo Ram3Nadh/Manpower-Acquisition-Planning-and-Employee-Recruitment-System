@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<title>View All Students</title>
+</h:head> 
+<body bgcolor="lightgrey"> 
+<ui:include src="/index.xhtml"/> 
+
+<h3 align="center"><u>View All Students</u></h3>
+
+<center>
+
+Total Students=#{adminbean.studcount}
+<h:dataTable value="#{student1bean.studlist}" var="student1bean" border="3">
+<h:column>
+<f:facet name="header">ID</f:facet>
+#{student1bean.id}
+</h:column>
+
+<h:column>
+<f:facet name="header">Name</f:facet>
+#{student1bean.name}
+</h:column>
+
+<h:column>
+<f:facet name="header">Gender</f:facet>
+#{student1bean.gender}
+</h:column>
+
+<h:column>
+<f:facet name="header">Department</f:facet>
+#{student1bean.department}
+</h:column>
+
+
+<h:column>
+<f:facet name="header">Mail</f:facet>
+#{student1bean.mail}
+</h:column>
+
+<h:column>
+<f:facet name="header">Contact</f:facet>
+#{student1bean.contact}
+</h:column>
+
+<h:column>
+<f:facet name="header">Action</f:facet>
+<h:form>
+<h:commandLink  value="Delete" action="#{student1bean.delete(stud.id)}"/>
+</h:form>
+</h:column>
+
+</h:dataTable>
+</center>
+</body> 
+</html>

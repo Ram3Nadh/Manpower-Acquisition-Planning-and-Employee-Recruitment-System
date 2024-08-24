@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<title>Student Registration</title>
+   <h:outputStylesheet library="css" name="style.css"/>
+
+</h:head> 
+<body> 
+<ui:include src="/index.xhtml"/>
+
+<h3 align="center"><u>Student Registration</u></h3>
+
+<center>
+
+<h:form>
+ <h:panelGrid columns="3" cellpadding="5">
+
+<h:outputLabel for="id" value="Enter ID" />
+<h:inputText id="id" required="true" requiredMessage="Enter ID" value="#{student1bean.id}"/>
+<h:message for="id" style="color:red"/>
+
+
+<h:outputLabel for="name" value="Enter Name" />
+<h:inputText id="name" required="true" requiredMessage="Enter Name" value="#{student1bean.name}"/>
+<h:message for="name" style="color:red"/>
+
+
+<h:outputLabel for="gender" value="Select Gender" />
+<h:selectOneRadio id="gender" required="true" requiredMessage="Select Gender" value="#{student1bean.gender}">
+<f:selectItem itemLabel="Male" itemValue="MALE"/>
+<f:selectItem itemLabel="Female" itemValue="FEMALE"/>
+<f:selectItem itemLabel="Others" itemValue="OTHERS"/>
+</h:selectOneRadio>
+<h:message for="gender" style="color:red"/>
+
+
+<h:outputLabel for="department" value="Select Department" />
+<h:selectOneMenu id="department" required="true" requiredMessage="Select Department" value="#{student1bean.department}">
+<f:selectItem itemLabel="--Select--" itemValue=""/>
+<f:selectItem itemLabel="CSE" itemValue="CSE"/>
+<f:selectItem itemLabel="CSIT" itemValue="CSIT"/>
+<f:selectItem itemLabel="AIDS" itemValue="AIDS"/>
+<f:selectItem itemLabel="ME" itemValue="ME"/>
+<f:selectItem itemLabel="CIVIL" itemValue="CIVIL"/>
+<f:selectItem itemLabel="ECS" itemValue="ECS"/>
+<f:selectItem itemLabel="ECE" itemValue="ECE"/>
+</h:selectOneMenu>
+<h:message for="department" style="color:red"/>
+
+
+<h:outputLabel for="mail" value="Enter Mail" />
+<h:inputText id="mail" required="true" requiredMessage="Enter mail" value="#{student1bean.mail}"/>
+<h:message for="mail" style="color:red"/>
+
+
+<h:outputLabel for="password" value="Enter Password" />
+<h:inputSecret id="password" required="true" requiredMessage="Enter Password" value="#{student1bean.password}"/>
+<h:message for="password" style="color:red"/>
+
+
+<h:outputLabel for="contact" value="Enter Contact" />
+<h:inputText id="contact" required="true" requiredMessage="Enter Contact" value="#{student1bean.contact}"/>
+<h:message for="contact" style="color:red"/>
+
+    <h:outputLabel for="add"/>
+    <h:commandButton id="add" styleClass="button" value="Submit" action="#{student1bean.add()}"/>
+    <h:message for="add"/>
+
+</h:panelGrid>
+</h:form>
+</center>
+</body> 
+</html>
